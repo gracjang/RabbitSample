@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using RabbitSample.Banking.Application.Services;
 using RabbitSample.Banking.Application.Services.Interfaces;
+using RabbitSample.Banking.Domain.Commands;
+using RabbitSample.Banking.Domain.Handlers;
 using RabbitSample.Banking.Domain.Repositories.Interfaces;
 using RabbitSample.Domain.Core.Bus;
 using RabbitSimple.Banking.Data.Context;
@@ -16,6 +19,7 @@ namespace RabbitSample.Infrastructure.IoC
       services.AddTransient<IAccountService, AccountService>();
       services.AddTransient<IAccountRepository, AccountRepository>();
       services.AddTransient<BankingDbContext>();
+      services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, CreateTransferCommandHandler>();
     }
   }
 }

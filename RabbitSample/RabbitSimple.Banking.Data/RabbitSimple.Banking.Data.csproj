@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RabbitSample.Banking.Application\RabbitSample.Banking.Application.csproj" />
     <ProjectReference Include="..\RabbitSample.Banking.Domain\RabbitSample.Banking.Domain.csproj" />
   </ItemGroup>
 

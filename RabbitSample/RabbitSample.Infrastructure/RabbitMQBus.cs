@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitSample.Domain.Core.Bus;
+using RabbitSample.Domain.Core.Commands;
 using RabbitSample.Domain.Core.Events;
 
 namespace RabbitSample.Infrastructure
@@ -26,12 +27,12 @@ namespace RabbitSample.Infrastructure
       _eventTypes = new List<Type>();
     }
 
-    public Task SendCommand<T>(T command) where T : ICommand
+    public Task SendCommand<T>(T command) where T : CommandBase
     {
       return _mediator.Send(command);
     }
 
-    public void Publish<TEvent>(TEvent @event) where TEvent : IEvent
+    public void Publish<TEvent>(TEvent @event) where TEvent : EventBase
     {
       var factory = new ConnectionFactory {HostName = "localhost"};
       using var con = factory.CreateConnection();
@@ -48,7 +49,7 @@ namespace RabbitSample.Infrastructure
       }
     }
 
-    public void Subscribe<TEvent, TEventHandler>() where TEvent : IEvent where TEventHandler : IEventHandler<TEvent>
+    public void Subscribe<TEvent, TEventHandler>() where TEvent : EventBase where TEventHandler : IEventHandler<EventBase>
     {
       void Validate(string s, Type type)
       {
@@ -78,7 +79,7 @@ namespace RabbitSample.Infrastructure
       StartBasicConsume<TEvent>();
     }
 
-    private void StartBasicConsume<T>() where T : IEvent
+    private void StartBasicConsume<T>() where T : EventBase
     {
       var factory = new ConnectionFactory
       {

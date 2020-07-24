@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RabbitSample.Banking.Application.Models;
 using RabbitSample.Banking.Application.Services.Interfaces;
 
 namespace RabbitSample.Banking.API.Controllers
@@ -16,9 +17,16 @@ namespace RabbitSample.Banking.API.Controllers
 
     // GET api/banking
     [HttpGet]
-    public IActionResult Index()
+    public IActionResult Get()
     {
       return Json(_accountService.GetAccounts());
+    }
+
+    [HttpPost]
+    public IActionResult Post([FromBody] AccountTransfer accountTransfer)
+    {
+      _accountService.Transfer(accountTransfer);
+      return Ok();
     }
   }
 }
