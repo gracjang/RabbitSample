@@ -8,9 +8,9 @@ using RabbitSimple.Banking.Data.Repository;
 
 namespace RabbitSample.Infrastructure.IoC
 {
-  public class Container
+  public static class Container
   {
-    public static void Register(IServiceCollection services)
+    public static void RegisterServices(this IServiceCollection services)
     {
       services.AddTransient<IBus, RabbitMQBus>();
       services.AddTransient<IAccountService, AccountService>();
