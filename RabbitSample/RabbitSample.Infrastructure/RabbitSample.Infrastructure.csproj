@@ -13,6 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\RabbitSample.Banking.Application\RabbitSample.Banking.Application.csproj" />
     <ProjectReference Include="..\RabbitSample.Domain.Core\RabbitSample.Domain.Core.csproj" />
+    <ProjectReference Include="..\RabbitSample.Transfer.Application\RabbitSample.Transfer.Application.csproj" />
+    <ProjectReference Include="..\RabbitSample.Transfer.Data\RabbitSample.Transfer.Data.csproj" />
     <ProjectReference Include="..\RabbitSimple.Banking.Data\RabbitSimple.Banking.Data.csproj" />
   </ItemGroup>
 

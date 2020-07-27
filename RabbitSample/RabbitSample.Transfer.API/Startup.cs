@@ -1,22 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RabbitSample.Domain.Core.Bus;
 using RabbitSample.Infrastructure.IoC;
 using RabbitSample.Transfer.Data.Context;
-using RabbitSimple.Banking.Data.Context;
+using RabbitSample.Transfer.Domain.Events;
+using RabbitSample.Transfer.Domain.Handlers;
 
 namespace RabbitSample.Transfer.API
 {
@@ -76,6 +71,14 @@ namespace RabbitSample.Transfer.API
       {
         endpoints.MapControllers();
       });
+
+      ConfigureEventBus(app);
+    }
+
+    private void ConfigureEventBus(IApplicationBuilder app)
+    {
+      var eventBus = app.ApplicationServices.GetRequiredService<IBus>();
+      eventBus.Subscribe<TransferCreatedEvent, TransferCreatedEventHandler>();
     }
   }
 }

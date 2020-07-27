@@ -10,7 +10,8 @@ namespace RabbitSample.Domain.Core.Bus
 
     void Publish<TEvent>(TEvent @event) where TEvent : EventBase;
 
-    void Subscribe<TEvent, TEventHandler>() where TEvent : EventBase
-      where TEventHandler : IEventHandler<EventBase>;
+    void Subscribe<TEvent, TEventHandler>() 
+      where TEvent : EventBase
+      where TEventHandler : IEventHandler<TEvent>;
   }
 }

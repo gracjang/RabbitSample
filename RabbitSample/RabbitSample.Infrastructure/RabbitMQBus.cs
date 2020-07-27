@@ -49,7 +49,9 @@ namespace RabbitSample.Infrastructure
       }
     }
 
-    public void Subscribe<TEvent, TEventHandler>() where TEvent : EventBase where TEventHandler : IEventHandler<EventBase>
+    public void Subscribe<TEvent, TEventHandler>() 
+      where TEvent : EventBase 
+      where TEventHandler : IEventHandler<TEvent>
     {
       void Validate(string s, Type type)
       {
