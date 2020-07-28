@@ -29,11 +29,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.API", "RabbitSample.Transfer.API\RabbitSample.Transfer.API.csproj", "{3AF3726D-3DD0-4A07-910C-B2E56B2911B7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F12B543C-E504-48D3-B7F4-8A0863EA3D7E}"
-	ProjectSection(SolutionItems) = preProject
-		.travis.yml = .travis.yml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
