@@ -3,31 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Domain.Core", "RabbitSample.Domain.Core\RabbitSample.Domain.Core.csproj", "{0A6B9A5E-4382-4537-AD2F-1D1250F10CCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Domain.Core", "src\RabbitSample.Domain.Core\RabbitSample.Domain.Core.csproj", "{0A6B9A5E-4382-4537-AD2F-1D1250F10CCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Infrastructure", "RabbitSample.Infrastructure\RabbitSample.Infrastructure.csproj", "{8769C1C2-0FF9-4D97-81DD-1644C0E760D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Infrastructure", "src\RabbitSample.Infrastructure\RabbitSample.Infrastructure.csproj", "{8769C1C2-0FF9-4D97-81DD-1644C0E760D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{1F1B5C8A-0CAA-4026-B3D6-33228B69D3A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Banking.API", "RabbitSample.Banking.API\RabbitSample.Banking.API.csproj", "{3573ABFC-AB88-4F56-B893-199BC168919D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Banking.API", "src\RabbitSample.Banking.API\RabbitSample.Banking.API.csproj", "{3573ABFC-AB88-4F56-B893-199BC168919D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSimple.Banking.Data", "RabbitSimple.Banking.Data\RabbitSimple.Banking.Data.csproj", "{3C0F6B71-C1BC-4FFA-9F1B-96C9C90F8073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSimple.Banking.Data", "src\RabbitSimple.Banking.Data\RabbitSimple.Banking.Data.csproj", "{3C0F6B71-C1BC-4FFA-9F1B-96C9C90F8073}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Banking.Application", "RabbitSample.Banking.Application\RabbitSample.Banking.Application.csproj", "{87BA5673-94B6-486A-9694-684EAC5CF0F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Banking.Application", "src\RabbitSample.Banking.Application\RabbitSample.Banking.Application.csproj", "{87BA5673-94B6-486A-9694-684EAC5CF0F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Banking.Domain", "RabbitSample.Banking.Domain\RabbitSample.Banking.Domain.csproj", "{1012F6C4-5E69-4A4B-B134-F439B1763686}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Banking.Domain", "src\RabbitSample.Banking.Domain\RabbitSample.Banking.Domain.csproj", "{1012F6C4-5E69-4A4B-B134-F439B1763686}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Banking", "Banking", "{907743C2-5365-4A70-8154-E89C0284D007}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transfer", "Transfer", "{95C5730A-B6BE-4282-A328-3790CA2E156A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.Domain", "RabbitSample.Transfer.Domain\RabbitSample.Transfer.Domain.csproj", "{DECF76C6-E649-4548-BCF8-D0A46D0DE5D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.Domain", "src\RabbitSample.Transfer.Domain\RabbitSample.Transfer.Domain.csproj", "{DECF76C6-E649-4548-BCF8-D0A46D0DE5D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.Data", "RabbitSample.Transfer.Data\RabbitSample.Transfer.Data.csproj", "{DCA82770-C0FA-431A-A156-C78D8E2198DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.Data", "src\RabbitSample.Transfer.Data\RabbitSample.Transfer.Data.csproj", "{DCA82770-C0FA-431A-A156-C78D8E2198DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.Application", "RabbitSample.Transfer.Application\RabbitSample.Transfer.Application.csproj", "{E8087CBE-D2B6-41A1-ACC9-D1D650773B79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.Application", "src\RabbitSample.Transfer.Application\RabbitSample.Transfer.Application.csproj", "{E8087CBE-D2B6-41A1-ACC9-D1D650773B79}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.API", "RabbitSample.Transfer.API\RabbitSample.Transfer.API.csproj", "{3AF3726D-3DD0-4A07-910C-B2E56B2911B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSample.Transfer.API", "src\RabbitSample.Transfer.API\RabbitSample.Transfer.API.csproj", "{3AF3726D-3DD0-4A07-910C-B2E56B2911B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

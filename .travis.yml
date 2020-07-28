@@ -2,10 +2,9 @@ language: csharp
 dist: xenial
 mono: none
 dotnet: 3.1
-solution: ./RabbitSample/RabbitSample.sln
 branches:
   only:
     - master
     - dev
 script:
-  - dotnet build
+  - .\scripts\travis-build.sh
