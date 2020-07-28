@@ -22,7 +22,13 @@ namespace RabbitSample.Infrastructure.IoC
   {
     public static void RegisterServices(this IServiceCollection services)
     {
-      services.AddTransient<IBus, RabbitMQBus>();
+      services.AddSingleton<IBus, RabbitMQBus>(sp =>
+      {
+        var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+
+        return new RabbitMQBus(sp.GetService<IMediator>(), scopeFactory);
+      });
+      services.AddTransient<TransferCreatedEventHandler>();
 
       services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, CreateTransferCommandHandler>();
 

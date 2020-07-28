@@ -16,5 +16,11 @@ namespace RabbitSample.Transfer.Data.Repository
 
     public IEnumerable<TransferLog> GetTransferLogs()
       => _transferDbContext.TransferLogs;
+
+    public void Add(TransferLog transferLog)
+    {
+      _transferDbContext.TransferLogs.Add(transferLog);
+      _transferDbContext.SaveChanges();
+    }
   }
 }
