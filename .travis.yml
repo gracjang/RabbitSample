@@ -2,15 +2,12 @@ language: csharp
 dist: xenial
 mono: none
 dotnet: 3.1
-install:
-  - dotnet restore
 branches:
   only:
     - master
-    - develop
+    - dev
 
 before_script:
  - dotnet restore
-
 script:
   - dotnet build
