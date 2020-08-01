@@ -1,0 +1,46 @@
+version: "3.5"
+
+services:
+  banking-api:
+    build: ../RabbitSample/src/RabbitSample.Banking.API
+    links:
+      - mssql
+      - rabbitmq
+    ports:
+      - '5000:5000'
+    networks:
+      - rabbit
+
+  transfer-api:
+    build: ../RabbitSample/src/RabbitSample.Transfer.Api
+    links:
+      - mssql
+      - rabbitmq
+    ports:
+      - '5001:5001'
+    networks:
+      - rabbit
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: unless-stopped
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - rabbit
+
+  mssql:
+    image: microsoft/mssql-server-linux
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: "Abcd1234!"
+    ports:
+      - "1433:1433"
+    networks:
+      - rabbit
+
+networks:
+  rabbit:
+    name: rabbit-network
