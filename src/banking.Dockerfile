@@ -1,11 +1,8 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app
 
-COPY RabbitSample.Banking.API.csproj ./
-RUN dotnet restore
-
 COPY . ./
-RUN dotnet publish -c Release -o out
+RUN dotnet publish RabbitSample.Banking.API -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app

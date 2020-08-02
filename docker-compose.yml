@@ -2,7 +2,9 @@ version: "3.5"
 
 services:
   banking-api:
-    build: ../RabbitSample/src/RabbitSample.Banking.API
+    build:
+      context: src/
+      dockerfile: banking.Dockerfile
     links:
       - mssql
       - rabbitmq
@@ -12,7 +14,9 @@ services:
       - rabbit
 
   transfer-api:
-    build: ../RabbitSample/src/RabbitSample.Transfer.Api
+    build: 
+      context: src/
+      dockerfile: transfer.Dockerfile
     links:
       - mssql
       - rabbitmq
